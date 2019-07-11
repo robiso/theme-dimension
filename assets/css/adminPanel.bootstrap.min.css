@@ -1,5 +1,7 @@
 body #adminPanel {
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     z-index: 999999;
     background: transparent;
     color: #aaa;
@@ -7,8 +9,24 @@ body #adminPanel {
     font-family: "Lucida Sans Unicode",Verdana, sans-serif;
 }
 
-body #adminPanel b {
+body #adminPanel b,
+body #adminPanel label {
     color: #999;
+    font-family: "Lucida Sans Unicode",Verdana, sans-serif;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+body #adminPanel input[type="radio"] {
+     -webkit-appearance: radio !important;
+     -moz-appearance: radio !important;
+     -ms-appearance: radio !important;
+     -o-appearance: radio !important;
+     appearance: radio !important;
+
+     opacity: 1 !important;
+     display: inline-block !important;
+     z-index: auto;
 }
 
 body #adminPanel .btn {

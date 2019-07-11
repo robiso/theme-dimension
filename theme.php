@@ -1,6 +1,5 @@
-<?php global $Wcms ?>
-
 <?php
+global $Wcms;
 
 function getPageBlocks(string $key, string $page): string
 {
@@ -92,10 +91,9 @@ function alterAdmin($args) {
     $args[0] = preg_replace('~<(?:!DOCTYPE|/?(?:html|body))[^>]*>\s*~i', '', $doc->saveHTML());
     return $args;
 }
-wCMS::addListener('settings', 'alterAdmin');
+$Wcms->addListener('settings', 'alterAdmin');
 
 ?>
-
 <!DOCTYPE HTML>
 <!--
 	Dimension by HTML5 UP
@@ -183,7 +181,7 @@ wCMS::addListener('settings', 'alterAdmin');
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright"><?= $Wcms->footer() ?> Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright"><?= $Wcms->footer() ?> &nbsp; | &nbsp; Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>

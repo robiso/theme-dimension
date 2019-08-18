@@ -400,12 +400,18 @@
 				if (location.hash != ''
 				&&	location.hash != '#')
 					$window.on('load', function() {
-						$main._show(location.hash.substr(1), true);
+						if(!document.getElementById(location.hash.substr(1)))
+							$main._show("404", true);
+						else
+							$main._show(location.hash.substr(1), true);
 					});
-				else if (location.pathname != ''
-					 &&  location.pathname != '/')
+				else if (location.href != base
+					 &&  location.href != base.substr(0, base.length - 1))
 					$window.on('load', function() {
-						location.hash = '#' + location.pathname.substr(1);
+						if(redirect)
+							location.href = base + '#' + location.pathname.substr(1).split("/").pop();
+						else
+							location.hash = '#' + location.pathname.substr(1).split("/").pop();
 					});
 
 })(jQuery);
